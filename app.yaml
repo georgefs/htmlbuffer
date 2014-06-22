@@ -1,0 +1,44 @@
+application: htmlbuffer
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+builtins:
+- remote_api: on
+- deferred: on
+- appstats: on
+
+
+libraries:
+- name: jinja2
+  version: latest
+
+
+handlers:
+
+- url: /static
+  static_dir: static
+  expiration: "1d"
+
+- url: /media
+  static_dir: media
+  expiration: "30s"
+
+
+- url: /.*
+  script: index.app
+
+skip_files:
+- .*\.rb
+- .*\.scss
+- .*\.pyc
+- .*\.DS_Store
+- \.svn\-base
+- \.svn/*
+- \.git/*
+- .*\.zip
+- google_appengine/*
+- htmlcov/*
+- .*\.log
+

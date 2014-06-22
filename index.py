@@ -4,7 +4,7 @@ import logging
 import os
 
 app = webapp2.WSGIApplication([
-    (r'/', 'views.Index'),
+    (r'/list', 'views.Index'),
     (r'/html/(\w+)/', 'views.Html'),
     (r'/html', 'views.Html'),
 

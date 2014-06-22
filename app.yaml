@@ -26,6 +26,10 @@ handlers:
   expiration: "30s"
 
 
+- url: /list
+  script: index.app
+  login: admin
+
 - url: /.*
   script: index.app
 

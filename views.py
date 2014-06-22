@@ -30,12 +30,12 @@ class Html(webapp2.RequestHandler):
     def get(self, name):
         no_fix = self.request.get('no_fix', False)
 
-        from funcs import fix_url
         temp = TempFile.get_by_id(name) or TempFile.get_by_id(int(name))
                 
         if no_fix:
             html = temp.html
         else:
+            from funcs import fix_url
             html = fix_url(temp.html, temp.url)
 
         self.response.write(html)

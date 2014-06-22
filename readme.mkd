@@ -4,13 +4,18 @@ gae html stoage
 
 api
 ---
+#存檔
 
 path=`/html` method='post'
+
 args:
-1. name: html name (require)
-2. url: origin url (require)
-3. html: html body (require)
 
+name| description|
+---|---|
+name| html name|
+url| html 原url|
+html| html 檔案|
 
-path="/html/(name)' method='get'
-get html from name
+#列表顯示
+path=`/list`
+

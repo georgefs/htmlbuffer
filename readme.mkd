@@ -1,0 +1,16 @@
+gae html stoage
+---
+
+
+api
+---
+
+path=`/html` method='post'
+args:
+1. name: html name (require)
+2. url: origin url (require)
+3. html: html body (require)
+
+
+path="/html/(name)' method='get'
+get html from name

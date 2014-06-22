@@ -6,6 +6,7 @@ api
 ---
 
 path=`/html` method='post'
+
 args:
 1. name: html name (require)
 2. url: origin url (require)

@@ -47,6 +47,9 @@ class Html(webapp2.RequestHandler):
         self.response.write(html)
 
     def post(self):
+        if 'appspot.com' in self.request.headers.get('referer'):
+            return
+
         name = self.request.params.get('name')
         html = self.request.params.get('html')
         url = self.request.params.get('url') or self.request.headers.get('referer')
@@ -56,7 +59,3 @@ class Html(webapp2.RequestHandler):
         tempfile.put()
 
         self.response.write('success')
-
-        
-
-

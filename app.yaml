@@ -26,6 +26,11 @@ handlers:
   expiration: "30s"
 
 
+- url: /sandbox
+  script: sandbox.app
+  login: admin
+
+
 - url: /list
   script: index.app
   login: admin

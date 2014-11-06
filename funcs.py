@@ -5,7 +5,7 @@ import urlparse
 def __update(matcher, base):
     def update_base(matcher, base):
         key, value = matcher.groups()
-        return '{}="{}"'.format(key, urlparse.urljoin(base, value))
+        return u'{}="{}"'.format(key, urlparse.urljoin(base, value))
  
     update_base = partial(update_base, base=base)
     data = matcher.group()

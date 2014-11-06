@@ -5,6 +5,7 @@ import os
 from jinja2 import Template, Environment
 from google.appengine.datastore.datastore_query import Cursor
 import urlparse
+import urllib
 
 
 loader_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -36,7 +37,7 @@ class Html(webapp2.RequestHandler):
     def get(self, name):
         no_fix = self.request.get('no_fix', False)
 
-        temp = TempFile.get_by_id(name) or TempFile.get_by_id(int(name))
+        temp = TempFile.get_by_id(name) or TempFile.get_by_id(urllib.quote_plus(name)) or TempFile.get_by_id(int(name))
                 
         if no_fix:
             html = temp.html
